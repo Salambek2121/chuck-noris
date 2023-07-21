@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="h1">Fetch</h1>
+    <div id="div"></div>
+    <div id="text"></div>
+    <button id="button">click</button>
+
+    <script type="text/javascript">
+        const button = document.getElementById('button')
+        const div = document.getElementById('div')
+        const text = document.getElementById('text')
+
+        button.addEventListener('click', () => {
+            fetch('https://api.chucknorris.io/jokes/random')
+                .then((res) => res.json())
+                .then((joke) => {
+                    text.textContent = ''
+
+                    text.append(joke.value)
+                })
+            div.append(button)
+        })
+    </script>
+
+</body>
+
+</html>
